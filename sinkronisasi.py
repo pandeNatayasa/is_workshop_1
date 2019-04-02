@@ -35,13 +35,18 @@ while (1):
         data_mhs = nama_fungsi(cursor_db)
         data_sinkronisasi = fungsi_sinkronisasi(cursor_db)
 
-        if (len(data_sinkronisasi) < len(data_mhs)):
-            print("ada data baru")
+        # Contoh cara menampilkan isi data hasil select pada tabel tb_mhs dan memasukan nilai variabel pada string
+        print(" Data dalam tabel tb_mhs :")
+        for data in data_mhs:
+            print(" ID MAHASISWA : %d \n NAMA MAHASISWA : %s \n NIM : %s" % (data[0], data[1], data[2]))
 
-            # Karena ada data baru, silahkan insert data yang baru kedalam database sinkronisasi
+        if (len(data_sinkronisasi) < len(data_mhs)):
+            print("\n--------- ADA DATA BARU ----------\n")
+
+            # Karena ada data baru, silahkan insert data yang baru kedalam tabel tb_sinkronisasi
             # Tutorial insert salah satunya dapat dilihat di https://www.w3schools.com/python/python_mysql_insert.asp
         else:
-            print("belum ada data baru")
+            print("\n--------- BELUM ADA DATA BARU ---------\n")
     except:
         print("Error")
 

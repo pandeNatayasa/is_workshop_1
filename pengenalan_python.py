@@ -1,6 +1,9 @@
 #---------- IF ------------#
 my_age = input(" Input your age : ")
+
+# Karena input(my_age) dari user berupa string maka harus diubah dulu menjadi integer sebelum dibandingkan pada IF dengan cara berikut :
 age = int(my_age)
+
 if(age<10):
     print(" You are children ")
 elif(age<20):
